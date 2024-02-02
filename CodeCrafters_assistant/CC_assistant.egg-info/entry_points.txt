@@ -1,0 +1,2 @@
+[console_scripts]
+start_assistant = CodeCrafters_assistant.main:starter

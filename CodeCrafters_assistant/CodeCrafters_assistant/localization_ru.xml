@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<ua>
+	<default>
+   		<local_not_found_1 text="Запись"/>
+   		<local_not_found_2 text="в XML-файле не найдена!"/>
+   		<confirm text="Д"/>
+   		<confirm_long text="Да"/>
+   		<deny text="Н"/>
+   		<deny_long text="Нет"/>
+   		<stop text="Стоп"/>
+   		<change_language_desc text="Устанавливает язык программы."/>
+   		<change_language_list text="Список доступних языков:"/>
+   		<change_module_desc text="Позволяет переключиться на другое меню."/>
+   		<print_module_p0 text="Можно перейти в такие меню"/>
+   		<print_module_p1 text="Чтобы выбрать меню"/>
+   		<print_module_p2 text="напишите"/>
+   		<print_module_p3 text="в консоль."/>
+   		<assistant_welcome text="Привет! Я ваш персональный помощник."/>
+   		<wrong_module_number text="Неправильный номер модуля. Попробуйте ещё раз!"/>
+   		<negative_id_error text="Id не может быть отрицательным числом!"/>
+   		<wrong_id_error text="Некорректний id, попробуйте ещё раз!"/>
+
+   		<enter_the_command text="Пожалуйста, введите необходимую команду:   "/>
+   		<enter_to_leave text="Если захотите выйти из программы, напишите"/>
+   		<enter_back_p0 text="Напишите"/>
+   		<enter_back_p1 text="Д/Да"/>
+   		<enter_back_p2 text=", чтобы вернуться в предыдущее меню"/>
+
+   		<menu_entered_p0 text="Вы перешли в меню"/>
+   		<menu_entered_p1 text=". Список доступных команд:"/>
+
+   		<return_to_main text="Вернуться в главное меню"/>
+   		<exit text="Выйти из программы"/>
+   		<cancel text="Отменяет выполнение текущей команды (например, create/edit/sort_files)"/>
+   		<goodbye text="До свидания!"/>
+   		<select_language text="Пожалуйста, выберите язык"/>
+   		<select_module text="Пожалуйста, выберите меню"/>
+
+   		<please_enter_confirm_p0 text="Пожалуйста, введите"/>
+   		<please_enter_confirm_p1 text="чтобы подтвердить ваш выбор"/>
+   		<please_enter_confirm_p2 text="или"/>
+   		<please_enter_confirm_p3 text="чтобы отменить операцию"/>
+   		<please_enter_p0_1 text="Выберите, пожалуйста,"/>
+   		<please_enter_p0 text="Введите, пожалуйста,"/>
+   		<please_enter_p1 text="либо"/>
+   		<please_enter_p2 text="N"/>
+   		<please_enter_p3 text=", если желаете добавить позже"/>
+
+   		<choose_search_mode text="номер режима поиска"/>
+   		<enter_text_to_find text="текст, который вы хотите найти"/>
+   		<enter_edit text="что вы собираетесь редактировать"/>
+   		<enter_remove text="что вы собираетесь удалить"/>
+   		<enter_new_text text="новый текст"/>
+
+   		<list_empty text="Нет сохранённых записей!"/>
+   		<record_id_not_found text="Записи с таким id нет, попробуйте ещё раз!"/>
+	</default>
+	<contact_book>
+		<!--Contact manager-specific commands start-->
+
+   		<contact_manager_name text="менеджера контактов"/>
+   		<contact_manager_desc text="менеджер контактов и записей"/>
+
+   		<create_desc text="Добавляет новую запись в книгу контактов. Можно добавить имя, телефоны, день рождения, адрес и email сразу, а можно и позже."/>
+   		<enter_name text="имя"/>
+   		<enter_phone_number text="номер телефона (10 цифр)"/>
+   		<enter_birthday text="день рождения контакта (MM-DD-YYYY)"/>
+   		<enter_email text="електронную почту контакта(text@text.text)"/>
+   		<enter_address text="адрес контакта"/>
+
+   		<check_birthdays_desc text="Выводит список именинников на выбранный пользователем период."/>
+   		<enter_days_number text="количество дней"/>
+
+   		<edit_desc text="Редактирует имя/день рождения/електронную почту/адрес/телефоны контакта. Добавляет новый номер телефона."/>
+   		<choose_contact text="номер контакта"/>
+   		<choose_contact_to_edit text="номер контакта, который вы хотите отредактировать"/>
+   		<choose_contact_to_remove text="номер контакта, который вы хотите удалить"/>
+   		<choose_attr_action text="номер действия"/>
+
+   		<edit_phone_desc text="Редактирует номер телефона контакта."/>
+   		<choose_contact_phone text="номер телефона, который вы собираетесь редактировать"/>
+   		<choose_phone_edit_option text="что вы хотите сделать"/>
+   		<enter_new_phone text="новый номер телефона"/>
+
+   		<add_phone_desc text="Добавляет новый номер телефона к контакту."/>
+   		<phone_number_add text="номер телефона, который вы хотите добавить"/>
+
+   		<find_desc text="Ищет введённый текст в контактах."/>
+
+   		<remove_desc text="Удаляет имя/день рождения/электронную почту/адрес/номера телефонов контакта, либо же сам контакт."/>
+
+   		<remove_phone_desc text="Удаляет один из номеров телефона выбранного контакта."/>
+   		<choose_phone_to_delete text="номер телефона, который вы собираетесь удалить"/>
+
+   		<show_all_desc text="Выводит все контакты, которые есть в памяти."/>
+
+   		<invalid_day_error text="Ошибка! Количество дней должно быть числом!"/>
+   		<found_birthdays_p0 text="Контакты, у которых день рождения в течение следующих"/>
+   		<found_birthdays_p1 text="дней от сегоднешней даты:"/>
+
+   		<not_found_birthdays_p0 text="Нет контактов, у которых день рождения в течение следующих"/>
+   		<not_found_birthdays_p1 text="дней от сегоднешней даты."/>
+
+   		<print_contacts text="Сейчас сохранены такие контакты"/>
+
+   		<print_attributes text="Выберите номер того, что вы хотите редактировать"/>
+   		<print_attr_0 text="Имя контакта"/>
+   		<print_attr_1 text="День рождения"/>
+   		<print_attr_2 text="Електронную почту"/>
+   		<print_attr_3 text="Адрес"/>
+   		<print_attr_4 text="Номера телефонов"/>
+   		<print_attr_4_1 text="Номер телефона"/>
+
+   		<attr_0 text="Имя"/>
+   		<attr_1 text="День рождения"/>
+   		<attr_2 text="Електронная почта"/>
+   		<attr_3 text="Адрес"/>
+   		<attr_4 text="Номера телефонов"/>
+   		<attr_4_1 text="Номер телефона"/>
+
+   		<search_attributes text="Выберите, где вы хотите искать текст"/>
+   		<search_attr_0 text="В именах."/>
+   		<search_attr_1 text="В днях рождения."/>
+   		<search_attr_2 text="В електронных почтах."/>
+   		<search_attr_3 text="В адресах."/>
+   		<search_attr_4 text="В телефонах."/>
+   		<search_attr_5 text="Везде."/>
+
+   		<contact_attr_add_p1 text="Контакт создан с именем"/>
+   		<contact_attr_add_p2 text="днём рождения"/>
+   		<contact_attr_add_p3 text="електронной почтой"/>
+   		<contact_attr_add_p4 text="адресом"/>
+   		<contact_attr_add_p5 text="номерами телефона"/>
+
+   		<what_to_delete_p0 text="Что вы хотите удалить:"/>
+   		<what_to_delete_p1 text="Сам контакт."/>
+   		<what_to_delete_p2 text="Имя/день рождения/электронную почту/адрес/телефон."/>
+
+   		<how_to_edit_phone_p0 text="Что вы хотите сделать:"/>
+   		<how_to_edit_phone_p1 text="Отредактировать существующий номер телефона."/>
+   		<how_to_edit_phone_p2 text="Добавить новый."/>
+
+   		<remove_attribute_ask_p0 text="Вы действительно хотите удалить"/>
+   		<remove_attribute_ask_p1 text="контакта?"/>
+		
+   		<negative_id_error text="Id не может быть отрицательным числом!"/>
+   		<wrong_id_error text="Некорректный id, попробуйте ещё раз!"/>
+
+   		<edit_contact_p1 text="отредактирован."/>
+   		<no_phone_numbers_error text="Контакт не имеет сохранённых номеров телефона!"/>
+   		<choose_the_phone text="Выберите нужный номер телефона"/>
+   		<contact_removed text="Контакт удалён."/>
+   		<contact_remove_abort text="Удаление отменено."/>
+   		<contact_remove_submit text="Вы точно уверены, что хотите удалить этот контакт:"/>
+   		<phone_removed text="Телефон удалён."/>
+
+   		<find_hub_fail text="Указанный текст не найден"/>
+   		<find_hub_intro text="Указанный текст найден в следующих контактах"/>
+		<!--Contact manager-specific commands end-->
+
+
+		<!--Record manager-specific commands start-->
+   		<unnamed_contact text="Безымянный контакт"/>
+   		<none text="нет"/>
+   		<no_birthday text="День рождения в записи отсутствует. Пожалуйста, воспользуйтесь функцией добавления дня рождения!"/>
+   		<no_email text="Электронная почта в записи отсутствует. Пожалуйста, воспользуйтесь функцией добавления электронной почты!"/>
+   		<phone_added_p0 text="Телефон добавлен. Если желаете добавить ещё один, введите его в консоль. Когда добавите все, которые хотели, просто пропишите '"/>
+   		<phone_added_p1 text="N"/>
+   		<phone_added_p2 text="' в консоль."/>
+   		<phone_not_found text="Этот телефон в выбранном контакте не найден!"/>
+
+   		<name_removed text="Имя удалено."/>
+   		<birthday_removed text="День рождения удалён."/>
+   		<email_removed text="Электронная почта удалена."/>
+   		<address_removed text="Адрес удалён."/>
+   		<phone_removed text="Телефон удалён."/>
+   		<wrong_month_format_char_num text="Некорректный формат месяца: он должен состоять ровно из двух символов."/>
+   		<wrong_month_format_out_bound text="Некорректный формат месяца: их не может быть больше двенадцати. Правильный формат: ММ-ДД-ГГГГ, или ММДДГГГГ."/>
+   		<wrong_day_format_char_num text="Некорректный формат дня: он должен состоять ровно из двух символов."/>
+   		<wrong_day_format_out_bound text="Некорректный формат дня: их не может быть больше тридцати одного. Правильный формат: ММ-ДД-ГГГГ, или ММДДГГГГ."/>
+   		<wrong_year_format_char_num text="Некорректный формат года: он должен состоять ровно из четырёх символов."/>
+   		<wrong_year_format_out_bound text="Некорректный формат года: день рождения не может быть в будущем. Правильный формат: ММ-ДД-ГГГГ, или ММДДГГГГ."/>
+   		<wrong_year_format_days_num text="Некорректный формат даты: в выбранных месяце и году столько дней быть не может."/>
+
+   		<incorrect_phone text="Некорректный номер телефона. Должен состоять исключительно из цифр, и цифр должно быть 10. Не больше и не меньше."/>
+   		<wrong_birthday_format text="Некорректный формат дня рождения. Правильный формат: ММ-ДД-ГГГГ, или ММДДГГГГ."/>
+   		<wrong_email_format text="Некорректный формат электронной почты. Правильный формат: текст@текст.текст"/>
+		<!--Record manager-specific commands end-->
+	</contact_book>
+	<note_manager>
+   		<wrong_title_format text="Некорректный формат заголовка: заголовок не может быть пустым."/>
+   		<wrong_text_format text="Некорректный формат заметка: заметка не может быть пустой."/>
+   		<wrong_tag_format text="Некорректный формат тега: тег не может быть пустым."/>
+
+   		<tag_added_p0 text="Тег добавлен. Если желаете добавить ещё один, введите его в консоль. Когда добавите все, которые хотели, просто напишите '"/>
+   		<tag_added_p1 text="stop"/>
+   		<tag_added_p2 text="' в консоль."/>
+   		<title_removed text="Заголовок удалён."/>
+   		<text_removed text="Текст удалён."/>
+   		<tag_removed text="Тег удалён."/>
+   		<tag_not_found text="Такого тега не существует!"/>
+   		<unnamed_note text="Безымянная заметка"/>
+   		<none text="нет"/>
+
+   		<print_notes text="Сейчас сохранены такие заметки"/>
+   		<print_attributes text="Выберите номер того, что вы хотите редактировать"/>
+   		<print_attr_0 text="Заголовок"/>
+   		<print_attr_1 text="Текст"/>
+   		<print_attr_2 text="Теги"/>
+
+   		<attr_0 text="Заголовок"/>
+   		<attr_1 text="Текст"/>
+   		<attr_2 text="Теги"/>
+   		<attr_2_1 text="Тег"/>
+
+   		<what_to_delete_p0 text="Что вы хотите удалить:"/>
+   		<what_to_delete_p1 text="Саму заметку."/>
+   		<what_to_delete_p2 text="Заголовок/текст/тег."/>
+
+   		<how_to_edit_tag_p0 text="Что вы хотите сделать:"/>
+   		<how_to_edit_tag_p1 text="Отредактировать существующий тег."/>
+   		<how_to_edit_tag_p2 text="Добавить новый."/>
+
+   		<remove_attribute_ask_p0 text="Вы действительно хотите удалить"/>
+   		<remove_attribute_ask_p1 text="заметки?"/>
+		
+   		<note_manager_name text="менеджера заметок"/>
+   		<note_manager_desc text="менеджер заметок"/>
+   		<create_desc text="Добавляет новую запись в книгу заметок. Можна добавить заголовок, текст и теги сразу, а можна и потом."/>
+   		<enter_title text="заголовок"/>
+   		<enter_text text="текст"/>
+   		<enter_tag text="тег"/>
+   		<edit_desc text="Редактирует заголовок/текст/теги заметки. Добавляет новый тег."/>
+   		<choose_note text="номер заметки"/>
+   		<choose_note_to_edit text="номер заметки, которую вы хотите отредактировать"/>
+   		<choose_note_to_remove text="номер заметки, которую вы хотите удалить"/>
+   		<choose_note_attr text="что вы собираетесь редактировать"/>
+   		<edit_note_text text="новый текст"/>
+
+   		<edit_tags_desc text="Редактирует теги заметки."/>
+   		<choose_note_tag text="тег, который вы собираетесь редактировать"/>
+   		<choose_tag_edit_option text="что вы хотите сделать"/>
+   		<enter_new_tag text="новый тег"/>
+   		<add_tag_desc text="Добавляет новый тег к заметке."/>
+   		<enter_the_tag text="тег, который вы хотите добавить"/>
+   		<find_desc text="Ищет введённый текст в заметках."/>
+   		<remove_desc text="Удаляет заголовок/текст/теги заметки, либо же саму заметку."/>
+   		<remove_tag_desc text="Удаляет один из тегов выбранной заметки."/>
+   		<choose_tag_to_del text="тег, который вы собираетесь удалить"/>
+   		<show_all_desc text="Выводит все заметки, которые есть в памяти."/>
+
+   		<choose_what_to_edit text="Выберите, что вы хотите редактировать"/>
+   		<edited text="отредактирован."/>
+   		<choose_the_tag text="Выберите нужный тег"/>
+   		<no_tags_error text="Заметка не имеет тегов!"/>
+   		<note_removed text="Заметка удалена."/>
+   		<note_remove_abort text="Удаление отменено."/>
+   		<note_remove_submit text="Вы точно уверены, что хотите удалить эту заметку:"/>
+
+   		<search_attributes text="Выберите, где вы хотите искать текст"/>
+   		<search_attr_0 text="В заголовках."/>
+   		<search_attr_1 text="В тексте."/>
+   		<search_attr_2 text="В тегах."/>
+   		<search_attr_3 text="Везде."/>
+
+   		<find_failure text="Указанный текст не найден!"/>
+   		<find_intro text="Указанный текст найден в следующих заметках"/>
+
+	</note_manager>
+	<file_sorter>
+   		<path_p0 text="Например:"/>
+   		<path_p1 text="'C:\Users\user_name\Documents\my_folder'"/>
+   		<file_sorter_name text="сортировщика файлов"/>
+   		<file_sorter_desc text="сортировщик файлов"/>
+   		<sort_files_desc text="Сортирует все файлы по указанному пути (включая все папки и файлы в них) и перемещает их по указанному адресу."/>
+   		<enter_input_folder text="Введите, пожалуйста, путь к папке, которую будем сортировать."/>
+   		<enter_output_folder text="Введите, пожалуйста, путь к папке, в которую будем складывать отсортированные файлы"/>
+   		<invalid_path text="не является корректным путём к папке! Попробуйте ещё раз!"/>
+	</file_sorter>
+</ua>

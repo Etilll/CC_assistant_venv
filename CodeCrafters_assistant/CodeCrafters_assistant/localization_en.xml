@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding="UTF-8"?>
+
+<eng>
+	<default>
+   		<local_not_found_1 text="Запис"/>
+   		<local_not_found_2 text="у XML-файлі не знайдено!"/>
+   		<confirm text="Y"/>
+   		<confirm_long text="Yes"/>
+   		<deny text="N"/>
+   		<deny_long text="No"/>
+   		<stop text="Stop"/>
+   		<change_language_desc text="Sets the programm's language."/>
+   		<change_language_list text="Languages available:"/>
+   		<change_module_desc text="Allows you to switch to a different menu."/>
+   		<print_module_p0 text="Available menus"/>
+   		<print_module_p1 text="To choose the"/>
+   		<print_module_p2 text="menu, enter"/>
+   		<print_module_p3 text="in the console."/>
+   		<assistant_welcome text="Hello! I'm your personal assistant!"/>
+   		<wrong_module_number text="Wrong module number. Please, try again!"/>
+   		<negative_id_error text="An id cannot be a negative number!"/>
+   		<wrong_id_error text="Wrong id, try again!"/>
+
+   		<enter_the_command text="Please, enter the command:   "/>
+   		<enter_to_leave text="If you decide to exit the program, enter"/>
+   		<enter_back_p0 text="Enter"/>
+   		<enter_back_p1 text="Y/Yes"/>
+   		<enter_back_p2 text=" to return to the previous menu"/>
+
+   		<menu_entered_p0 text="You are in the"/>
+   		<menu_entered_p1 text=" menu. Available commands:"/>
+
+   		<return_to_main text="Return to the main menu"/>
+   		<exit text="Exit the program"/>
+   		<cancel text="Cancels the execution of the current command (e.g. create/edit/sort_files)"/>
+   		<goodbye text="Goodbye!"/>
+   		<select_language text="Please, choose the language"/>
+   		<select_module text="Please, choose the menu"/>
+
+   		<please_enter_confirm_p0 text="Please, enter"/>
+   		<please_enter_confirm_p1 text="to confirm your choice,"/>
+   		<please_enter_confirm_p2 text="or"/>
+   		<please_enter_confirm_p3 text="to cancel the operation"/>
+   		<please_enter_p0_1 text="Please, choose"/>
+   		<please_enter_p0 text="Please, enter the"/>
+   		<please_enter_p1 text="or"/>
+   		<please_enter_p2 text="N"/>
+   		<please_enter_p3 text=", if you want to add it later"/>
+
+   		<choose_search_mode text="search mode number"/>
+   		<enter_text_to_find text="text you want to find"/>
+   		<enter_edit text="what you are going to edit"/>
+   		<enter_remove text="what you are going to remove"/>
+   		<enter_new_text text="new text"/>
+
+   		<list_empty text="No saved records!"/>
+   		<record_id_not_found text="There is no record with this id, try again!"/>
+	</default>
+	<contact_book>
+		<!--Contact manager-specific commands start-->
+
+   		<contact_manager_name text="contact manager"/>
+   		<contact_manager_desc text="contact manager"/>
+
+   		<create_desc text="Adds a new record to the contact book. You can add a name, a phone, a birthday, an address, an email - either when creating a record, or later."/>
+   		<enter_name text="name"/>
+   		<enter_phone_number text="phone number (10 digits)"/>
+   		<enter_birthday text="birthday (MM-DD-YYYY)"/>
+   		<enter_email text="email(text@text.text)"/>
+   		<enter_address text="address"/>
+
+   		<check_birthdays_desc text="Displays a list of contacts, who have a birthday in the specified perioud."/>
+   		<enter_days_number text="number of days"/>
+
+   		<edit_desc text="Edits the name/birthday/email/address/phone numbers of a contact. Adds a new phone number."/>
+   		<choose_contact text="number of a contact"/>
+   		<choose_contact_to_edit text="number of a contact you want to edit"/>
+   		<choose_contact_to_remove text="number of a contact you want to delete"/>
+
+   		<edit_phone_desc text="Edits the phone number of a contact."/>
+   		<choose_contact_phone text="phone number, which you are going to edit"/>
+   		<choose_phone_edit_option text="what you want to do"/>
+   		<enter_new_phone text="new phone number"/>
+
+   		<add_phone_desc text="Adds a new phone number to the contact."/>
+   		<phone_number_add text="phone number, which you are going to add"/>
+
+   		<find_desc text="Looks for a specified text in the contacts."/>
+
+   		<remove_desc text="Removes the name/birthday/email/address/phone number of the contact, or the contact itself."/>
+
+   		<remove_phone_desc text="Deletes one of the phone numbers of the chosen contact."/>
+   		<choose_phone_to_delete text="the phone number you are going to delete"/>
+
+   		<show_all_desc text="Displays the contents of the contact book."/>
+
+   		<invalid_day_error text="Error! Number of days must be a valid number"/>
+   		<found_birthdays_p0 text="Contacts, which have a birthday in the next"/>
+   		<found_birthdays_p1 text="days:"/>
+
+   		<not_found_birthdays_p0 text="No contacts found, with a birthday in the next"/>
+   		<not_found_birthdays_p1 text="days:"/>
+
+   		<print_contacts text="Saved contacts list"/>
+
+   		<print_attributes text="Choose the number of the value, which you are going to edit"/>
+   		<print_attr_0 text="Contact name"/>
+   		<print_attr_1 text="The birthday"/>
+   		<print_attr_2 text="The email"/>
+   		<print_attr_3 text="The address"/>
+   		<print_attr_4 text="The phone numbers"/>
+		<print_attr_4_1 text="The phone number"/>
+
+   		<attr_0 text="Name"/>
+   		<attr_1 text="Birthday"/>
+   		<attr_2 text="Email"/>
+   		<attr_3 text="Address"/>
+   		<attr_4 text="Phone numbers"/>
+   		<attr_4_1 text="Phone number"/>
+
+   		<contact_attr_add_p1 text="Contact created with name"/>
+   		<contact_attr_add_p2 text="Birthday"/>
+   		<contact_attr_add_p3 text="Email"/>
+   		<contact_attr_add_p4 text="Address"/>
+   		<contact_attr_add_p5 text="Phone number"/>
+
+   		<what_to_delete_p0 text="What do you want to delete:"/>
+   		<what_to_delete_p1 text="The contact itself."/>
+   		<what_to_delete_p2 text="name/birthday/email/address/phone."/>
+
+   		<how_to_edit_phone_p0 text="What do you want to do:"/>
+   		<how_to_edit_phone_p1 text="Edit the phone number."/>
+   		<how_to_edit_phone_p2 text="Add a new one."/>
+
+   		<remove_attribute_ask_p0 text="Do you really want to delete the"/>
+   		<remove_attribute_ask_p1 text="of the contact?"/>
+		
+   		<negative_id_error text="An id cannot be a negative number!"/>
+   		<wrong_id_error text="Wrong id, try again!"/>
+
+   		<edit_contact_p1 text="edited."/>
+   		<no_phone_numbers_error text="The contact has no saved phone numbers!"/>
+   		<choose_the_phone text="Choose the phone number you need"/>
+   		<contact_removed text="Contact removed."/>
+   		<contact_remove_abort text="Removal cancelled."/>
+   		<contact_remove_submit text="Are you sure that you want to remove this contact:"/>
+   		<phone_removed text="Phone removed."/>
+
+   		<print_find_modules_p0 text="Choose, where you want to look for the text"/>
+   		<print_find_modules_p1 text="In the names."/>
+   		<print_find_modules_p2 text="In the birthdays."/>
+   		<print_find_modules_p3 text="In the emails."/>
+   		<print_find_modules_p4 text="In the addresses."/>
+   		<print_find_modules_p5 text="In the phones."/>
+   		<print_find_modules_p6 text="Everywhere."/>
+
+   		<find_hub_fail text="Specified text not found"/>
+   		<find_hub_intro text="Specified text found in the next contacts"/>
+		<!--Contact manager-specific commands end-->
+
+
+		<!--Record manager-specific commands start-->
+   		<unnamed_contact text="Unnamed contact"/>
+   		<none text="none"/>
+   		<no_birthday text="Birthday is not set in this record. Please, use the function for adding birthday instead."/>
+   		<no_email text="Email is not set in this record. Please, use the function for adding an email instead."/>
+   		<phone_added_p0 text="Phone added. if you want to add another one, enter it in the console. When you are done, just enter '"/>
+   		<phone_added_p1 text="stop"/>
+   		<phone_added_p2 text="' in the console."/>
+   		<phone_not_found text="Haven't found this phone number in the chosen contact!"/>
+
+   		<name_removed text="Name removed."/>
+   		<birthday_removed text="Birthday removed."/>
+   		<email_removed text="Email removed."/>
+   		<address_removed text="Address removed."/>
+   		<phone_removed text="Phone removed."/>
+   		<wrong_month_format_char_num text="Wrong month format. Should be exactly two characters."/>
+   		<wrong_month_format_out_bound text="Wrong month format: there can't be more than 12 of them. Correct format: MM-DD-YYYY, or MMDDYYYY."/>
+   		<wrong_day_format_char_num text="Wrong day format. Should be exactly two characters."/>
+   		<wrong_day_format_out_bound text="Wrong day format: there can't be more than 31 of them. Correct format: MM-DD-YYYY, or MMDDYYYY."/>
+   		<wrong_year_format_char_num text="Wrong year format. Should be exactly four characters."/>
+   		<wrong_year_format_out_bound text="Wrong year format: birthday cannot be in the future. Correct format: MM-DD-YYYY, or MMDDYYYY."/>
+   		<wrong_year_format_days_num text="Wrong date format: there can't be this many days in the chosen year and month."/>
+
+   		<incorrect_phone text="Incorrect phone number. Must be exactly 10 characters, digits only."/>
+   		<wrong_birthday_format text="Wrong birthday format. The correct format would be: MM-DD-YYYY, or MMDDYYYY."/>
+   		<wrong_email_format text="Wrong email format. The correct format would be: text@text.text"/>
+		<!--Record manager-specific commands end-->
+	</contact_book>
+	<note_manager>
+   		<removed text="removed."/>
+   		<wrong_title_format text="Wrong title format: the title cannot be empty."/>
+   		<wrong_text_format text="Wrong note format: the note cannot be empty."/>
+   		<wrong_tag_format text="Wrong tag format: the tag cannot be empty."/>
+
+   		<tag_added_p0 text="Tag added. if you want to add another one, enter it in the console. When you are done, just enter '"/>
+   		<tag_added_p1 text="stop"/>
+   		<tag_added_p2 text="' in the console."/>
+   		<title_removed text="Title removed."/>
+   		<text_removed text="Text removed."/>
+   		<tag_removed text="Tag removed."/>
+   		<tag_not_found text="No tag with such name!"/>
+   		<unnamed_note text="Unnamed note"/>
+   		<none text="none"/>
+
+   		<print_notes text="Saved notes list"/>
+   		<print_attributes text="Choose the number of the value, which you are going to edit"/>
+   		<print_attr_0 text="Title"/>
+   		<print_attr_1 text="Text"/>
+   		<print_attr_2 text="Tags"/>
+
+   		<attr_0 text="Title"/>
+   		<attr_1 text="Text"/>
+   		<attr_2 text="Tags"/>
+   		<attr_2_1 text="Tag"/>
+
+   		<what_to_delete_p0 text="What do you want to delete:"/>
+   		<what_to_delete_p1 text="The note itself."/>
+   		<what_to_delete_p2 text="title/text/tag."/>
+
+   		<how_to_edit_tag_p0 text="What do you want to do:"/>
+   		<how_to_edit_tag_p1 text="Edit the tag."/>
+   		<how_to_edit_tag_p2 text="Add a new one."/>
+
+   		<remove_attribute_ask_p0 text="Do you really want to delete the"/>
+   		<remove_attribute_ask_p1 text="of the note?"/>
+		
+   		<note_manager_name text="note manager"/>
+   		<note_manager_desc text="note manager"/>
+   		<create_desc text="Adds a new record to the note book. You can add a title, text, tags - either when creating a record, or later."/>
+   		<enter_title text="title"/>
+   		<enter_text text="text"/>
+   		<enter_tag text="tag"/>
+   		<edit_desc text="Edits the title/text/tags of a note. Adds a new tag."/>
+   		<choose_note text="number of a note you want to edit"/>
+   		<choose_note_to_remove text="number of a note you want to delete"/>
+   		<choose_note_attr text="what you are going to edit"/>
+   		<edit_note_text text="new text"/>
+
+   		<edit_tags_desc text="Edits the tags of a note."/>
+   		<choose_note_tag text="tag you are going to edit"/>
+   		<edit_note_tag text="new tag"/>
+   		<add_tag_desc text="Add a new tag to the note."/>
+   		<enter_the_tag text="tag, which you are going to add"/>
+   		<find_desc text="Looks for a specified text in the notes."/>
+   		<remove_desc text="Deletes the title/text/tags of a note, or the note itself."/>
+   		<remove_tag_desc text="Deletes one of the tags of the chosen note."/>
+   		<choose_tag_to_del text="the tag you are going to delete"/>
+   		<show_all_desc text="Displays the contents of the note book."/>
+
+   		<choose_what_to_edit text="Choose, what you are going to edit"/>
+   		<edited text="edited."/>
+   		<choose_the_tag text="Choose the tag you need"/>
+   		<no_tags text="The note has no tags!"/>
+   		<note_removed text="Note removed."/>
+   		<note_remove_abort text="Removal cancelled."/>
+   		<note_remove_submit text="Are you sure that you want to remove this note:"/>
+
+   		<search_attr_p0 text="Choose, where you want to look for the text"/>
+   		<search_attr_p1 text="In the titles."/>
+   		<search_attr_p2 text="In the text."/>
+   		<search_attr_p3 text="In the tags."/>
+   		<search_attr_p4 text="Everywhere."/>
+
+   		<find_failure text="Specified text not found!"/>
+   		<find_intro text="Specified text found in the next notes"/>
+	</note_manager>
+	<file_sorter>
+   		<path_p0 text="E.g."/>
+   		<path_p1 text="'C:\Users\user_name\Documents\my_folder'"/>
+   		<file_sorter_name text="files sorter"/>
+   		<file_sorter_desc text="files sorter"/>
+   		<sort_files_desc text="Sorts all files according to the specified path (including folders and files inside of them), and moves them to the specified directory."/>
+   		<enter_input_folder text="Please, enter the path to the folder we will be sorting."/>
+   		<enter_output_folder text="Please, enter the path to the folder, where sorted files will be stored"/>
+   		<invalid_path text="is not a valid folder path! Try again!"/>
+	</file_sorter>
+</eng>

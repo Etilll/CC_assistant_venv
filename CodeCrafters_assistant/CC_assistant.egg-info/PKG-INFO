@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: CC_assistant
+Version: 0.0.1
+Summary: Contact manager, note manager, and a file sorter - all in one programm!
+Author: CodeCrafters
+Author-email: andrii.strygun@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3.11.4
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Windows
+Requires-Dist: prompt_toolkit
