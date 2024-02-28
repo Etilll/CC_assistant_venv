@@ -1,12 +1,39 @@
 from CodeCrafters_assistant.utils import Translate
 from pathlib import Path
+from threading import Thread
+import concurrent.futures
 
+class IndexInput:
+    def index_input(self, file, path, storage):
+        file_name = file.name
+        known = False
+        suff = Path(file_name).suffix[1:].upper()
+        for check in storage.known_formats.keys():
+            if suff == check:
+                dir_dict = storage.known_formats[check] + "_list"
+                if not dir_dict in storage.all_lists:
+                    storage.all_lists[dir_dict] = {}
+                if not suff in storage.all_lists[dir_dict]:
+                    storage.all_lists[dir_dict][suff] = []
+                
+                storage.all_lists[dir_dict][suff].append(path / file_name)
+                known = True
 
-class FileSorter(Translate):
+        if known != True:
+            storage.known_formats[suff] = 'unknown'
+            if not 'unknown_list' in storage.all_lists:
+                storage.all_lists['unknown_list'] = {}
+
+            storage.all_lists['unknown_list'][suff] = []
+            storage.all_lists['unknown_list'][suff].append(path / file_name)
+
+class FileSorter(Translate, IndexInput):
     def __init__(self, parent_class):
         self.parent = parent_class
         self.parent.modules.append(self)
         self.parent.module_chosen = len(self.parent.modules) - 1
+        self.all_lists = {} #Structure: 'category':{'suffix1':['path1', ...], 'suffix2':['path1', ...]}
+        self.folders = set()
         self.reinit(mode='first')
         self.categories = { 'images':['JPEG', 'JPG', 'PNG', 'SVG'],
                            'video':['AVI', 'MP4', 'MOV', 'MKV'], 
@@ -44,34 +71,93 @@ class FileSorter(Translate):
                                 'description':"sort_files_desc", 
                                 'methods':{
                                     self.starter:{
-                                        'input':f"{self.translate_string('enter_input_folder','green')} {path}"},
-                                        'output':f"{self.translate_string('enter_output_folder','green')} {path}"}}}
+                                        'input':f"{self.translate_string('enter_input_folder','green')} {path}",
+                                        'output':f"{self.translate_string('enter_output_folder','green')} {path}"}}}}
     
         if mode != 'first':
             self.parent.module_chosen = tmp
   
+    class SorterThread(Thread, IndexInput):
+        def __init__(self, parent_class, path, group=None, target=None, name=None, *, daemon=None):
+            super().__init__(group=group, target=target, name=name, daemon=daemon)
+            self.parent_class = parent_class
+            self.path = path
+
+        def run(self) -> None:
+            #print("Started a new thread while forming all_list!")
+            for file in self.path.iterdir():
+                if not file.is_dir():
+                    self.index_input(file, self.path,storage=self.parent_class)
+                elif file.is_dir() and (file.name not in ('archives', 'video', 'audio', 'documents', 'images', 'unknown')):
+                    self.parent_class.folders.add(self.path / file.name)
+                    thread = self.parent_class.SorterThread(self.parent_class, self.path / file.name)
+                    thread.start()
+            if self.parent_class.src != self.path:
+                self.parent_class.folders.add(self.path)
+        
     def starter(self, arg1: str, arg2: str):
-        # Створюємо об'єкт Path для директорії джерела
         source_path = Path(arg1)
         # Перевіряємо, чи існує директорія та чи це директорія
-        if not source_path.exists() or not source_path.is_dir():
-            # Повертаємо повідомлення про помилку, якщо директорія недійсна
+        if source_path.exists() and source_path.is_dir():
+            self.src = source_path
+        else:
+            self.src = None
             return f"{self.RED}{arg1}{self.translate_string('invalid_path','green')}"
 
-        # Створюємо об'єкт Path для директорії призначення
         destination_path = Path(arg2)
         # Перевіряємо, чи існує директорія та чи це директорія
-        if not destination_path.exists() or not destination_path.is_dir():
-            # Повертаємо повідомлення про помилку, якщо директорія недійсна
+        if destination_path.exists() and destination_path.is_dir():
+            self.dest = destination_path
+        else:
+            self.dest = None
             return f"{self.RED}{arg2}{self.translate_string('invalid_path','green')}"
 
-        # Якщо директорії коректні, викликаємо метод real_sorter з правильними директоріями
-        self.real_sorter(source_path, destination_path)
+        self.input_index_control(self.src)
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+            executor.map(self.categories_handler, list(self.all_lists))
+
+        self.folders.add(self.src)
+        for em_folder in self.folders:
+            try:
+                em_folder.rmdir()
+            except OSError:
+                print(f'Error during remove folder {em_folder}')
+        
+        self.all_lists = {}
+        self.folders = set()
+
+    def categories_handler(self, category):
+        output_c = self.dest / str(category[0:len(category)-5])
+        if not output_c.exists():
+            output_c.mkdir(exist_ok=True, parents=True)
+        
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+            executor.map(self.suffixes_handler, list(self.all_lists[category]))
+
+    def suffixes_handler(self, suffix):
+        output_e = None
+        cat = None
+        for category,lisst in self.categories.items():
+            if suffix in lisst:
+                cat = category
+        if cat == None:
+            cat = 'unknown'
+        output_e = self.dest / cat.lower() / str(suffix)
+        if not output_e.exists():
+            output_e.mkdir(exist_ok=True, parents=True)
+        
+        for dir in self.all_lists[f"{cat.lower()}_list"][suffix]:
+            file_name = str(dir)
+            file_name = file_name[file_name.rfind("\\") + 1:]
+            suff = file_name[file_name.rfind("."):]
+            file_name = file_name[:len(file_name) - len(file_name[file_name.rfind("."):])]
+            dir.replace(output_e / self.normalize(file_name, suff))
+
+
 
     def real_sorter(self, path: Path, output: Path):
         import shutil
-        RETURN_TUPLE = self.sorter(path)
-        for categories, unnamed in RETURN_TUPLE[0].items():
+        for categories, unnamed in self.all_lists.items():
             output_c = output / str(categories[0:len(categories)-5])
             if not output_c.exists():
                 output_c.mkdir(exist_ok=True, parents=True)
@@ -93,45 +179,26 @@ class FileSorter(Translate):
                             dir.unlink()
                         except shutil.ReadError:
                             tmp_namee.rmdir()
-        for em_folder in RETURN_TUPLE[1]:
+        for em_folder in self.folders:
             try:
                 em_folder.rmdir()
             except OSError:
                 print(f'Error during remove folder {em_folder}')
+        
+        self.all_lists = {}
+        self.folders = set()
 
-    def sorter(self, path: Path):
-        ALL_LISTS = {}
-        FOLDERS = []
+    def input_index_control(self, path: Path):
         for file in path.iterdir():
             if not file.is_dir():
-                file_name = file.name
-                known = False
-                suff = Path(file_name).suffix[1:].upper()
-                for check,category in self.known_formats.items():
-                    if suff == check:
-                        dir_dict = self.known_formats[check] + "_list"
-                        if not dir_dict in ALL_LISTS:
-                            ALL_LISTS[dir_dict] = {}
-                        if not suff in ALL_LISTS[dir_dict]:
-                            ALL_LISTS[dir_dict][suff] = []
-                        
-                        ALL_LISTS[dir_dict][suff].append(path / file_name)
-                        known = True
-
-                if known != True:
-                    self.known_formats[suff] = 'unknown'
-                    if not 'unknown_list' in ALL_LISTS:
-                        ALL_LISTS['unknown_list'] = {}
-
-                    ALL_LISTS['unknown_list'][suff] = []
-                    ALL_LISTS['unknown_list'][suff].append(path / file_name)
-                
+                self.index_input(file, path, storage=self)
             elif file.is_dir() and (file.name not in ('archives', 'video', 'audio', 'documents', 'images', 'unknown')):
-                FOLDERS.append(path / file.name)
-                self.sorter(path / file.name)
+                self.folders.add(path / file.name)
+                thread = self.SorterThread(self, path / file.name)
+                thread.start()
+                #self.input_index_control(path / file.name)
 
-        FOLDERS.append(path)
-        return ALL_LISTS, FOLDERS
+        self.folders.add(path)
 
     def normalize(self, name: str, suff="") -> str:
         from re import sub

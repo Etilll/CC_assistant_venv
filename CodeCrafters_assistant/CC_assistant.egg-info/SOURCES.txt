@@ -9,7 +9,6 @@ CC_assistant.egg-info/requires.txt
 CC_assistant.egg-info/top_level.txt
 CodeCrafters_assistant/__init__.py
 CodeCrafters_assistant/contact_book.py
-CodeCrafters_assistant/copium.py
 CodeCrafters_assistant/main.py
 CodeCrafters_assistant/notes.py
 CodeCrafters_assistant/record_manager.py
